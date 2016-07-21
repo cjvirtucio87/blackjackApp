@@ -1,0 +1,14 @@
+<h1>Welcome to Blackjack</h1>
+
+
+<% if gameover %>
+  <h2><%= "Dealer's hands" %></h2> 
+  <%= dealer_hand %>
+<% end %>
+
+<h2>Player's hands</h2>
+<%= player_hand %>
+
+<form action="blackjack/hit" method="post">
+  <button type="submit">"Hit me!"</button>
+</form>
