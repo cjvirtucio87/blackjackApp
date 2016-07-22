@@ -1,7 +1,13 @@
 module ViewHelpers
 
   def main_header(outcome,bet)
-    outcome.nil? ? "Welcome to Blackjack" : display_outcome(outcome,bet)
+    content = nil
+    if outcome.nil? 
+      content ="Welcome to Blackjack"
+    else 
+      content = display_outcome(outcome,bet)
+    end
+    tag :h1, content
   end
 
   def display_outcome(outcome,bet)
