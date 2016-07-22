@@ -19,7 +19,7 @@ get '/' do
 end
 
 get '/blackjack' do
-  bet ||= session['bet']
+  bet = session['bet']
   dealer = session['dealer'] || Dealer.new
   dealer.deal unless dealer.dealt
   session['dealer'] = dealer
@@ -32,6 +32,7 @@ end
 
 post '/blackjack/hit' do
   bet = check_bet
+  binding.pry
   dealer = session['dealer']
   dealer.hit
   dealer.store(bet)

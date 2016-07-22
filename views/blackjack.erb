@@ -5,8 +5,7 @@
       <div class="col-xs-12">
         <%= main_header(outcome,bet) %>
 
-        <h3>Dealer's hands</h3> 
-        <%= gameover ? dealer_hand : dealer_hand[0] %>
+        <%= show_dealer_hand(dealer_hand,gameover) %>
 
         <h3>Player's hands</h3>
         <%= player_hand %>
@@ -16,7 +15,7 @@
     <div class="row">
       <div class="col-xs-2 col-xs-offset-5">
         <form action="blackjack/hit" method="post">
-          <%= input('bet', 'Place your bet.', class: 'form-control') unless bet %>
+          <%= input('input', 'bet', class: 'form-control') unless bet %>
           <%= button('Hit', type: 'submit', class: 'btn-secondary') unless gameover %>
         </form>
 

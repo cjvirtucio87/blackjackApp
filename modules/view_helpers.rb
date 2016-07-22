@@ -18,4 +18,13 @@ module ViewHelpers
     end
   end
 
+  def show_dealer_hand(hand,gameover)
+    tag :h1, "Dealer's Hand"
+    if gameover
+      tag :p, "#{hand}"
+    else
+      tag :p, "#{hand[0]}"
+    end
+  end
+
 end
