@@ -11,3 +11,7 @@
   <%= input('bet') unless bet %>
   <%= button('Hit', type: 'submit') unless gameover %>
 </form>
+
+<form action="blackjack/stay" method="get">
+  <%= button('Stay', type: 'submit') unless gameover %>
+</form>

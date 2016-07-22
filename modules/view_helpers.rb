@@ -6,7 +6,7 @@ module ViewHelpers
 
   def display_outcome(outcome,bet)
     if outcome
-      "Player wins. $#{bet*2}"
+      "Player wins. $#{bet.to_i*2}"
     else
       "Player loses."
     end

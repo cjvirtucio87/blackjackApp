@@ -2,7 +2,8 @@
 require 'pry'
 require 'sinatra'
 require 'erb'
-require './modules/helpers'
+require './modules/dealer_helpers'
+require './modules/card_helpers'
 require './modules/view_helpers'
 require './modules/controller_helpers'
 require 'sinatra/form_helpers'
@@ -31,7 +32,6 @@ end
 
 post '/blackjack/hit' do
   bet = check_bet
-  # session['bet']
   dealer = session['dealer']
   dealer.hit
   dealer.store(bet)
