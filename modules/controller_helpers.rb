@@ -7,5 +7,4 @@ module ControllerHelpers
     session['bet'] 
   end
 
-
 end
