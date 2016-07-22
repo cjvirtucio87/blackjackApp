@@ -34,12 +34,28 @@ module GameClasses
     end
 
     def stay
-      while get_dealer_points <= 17
+      until (get_dealer_points >= 17) || (get_dealer_points >= 21)  
         @dealer_hand.push @deck.get_card
       end
+      win?
+    end
+
+    def store(bet)
+      @bet ||= bet
     end
 
     private
+
+      def win?
+        return true if dealer_bust?
+        p_pts = get_player_points
+        d_pts = get_dealer_points
+        (p_pts > d_pts) && (p_pts <= 21)
+      end
+
+      def dealer_bust?
+        get_dealer_points > 21
+      end
 
       def get_player_points
         cards = @player_hand

@@ -1,14 +1,13 @@
-<h1>Welcome to Blackjack</h1>
+<h1><%= main_header(outcome,bet) %></h1>
 
 
-<% if gameover %>
-  <h2><%= "Dealer's hands" %></h2> 
-  <%= dealer_hand %>
-<% end %>
+<h3>Dealer's hands</h3> 
+<%= gameover ? dealer_hand : dealer_hand[0] %>
 
-<h2>Player's hands</h2>
+<h3>Player's hands</h3>
 <%= player_hand %>
 
 <form action="blackjack/hit" method="post">
+  <%= input('bet') unless bet %>
   <%= button('Hit', type: 'submit') unless gameover %>
 </form>
