@@ -10,5 +10,5 @@
 <%= player_hand %>
 
 <form action="blackjack/hit" method="post">
-  <button type="submit">"Hit me!"</button>
+  <%= button('Hit', type: 'submit') unless gameover %>
 </form>

@@ -3,6 +3,7 @@
 require 'sinatra'
 require 'erb'
 require './modules/helpers'
+require 'sinatra/form_helpers'
 
 enable :sessions
 
@@ -22,8 +23,6 @@ get '/blackjack' do
 end
 
 post '/blackjack/hit' do
-  #Remember that HTTP is stateless. @dealer variable
-  #not shared between /blackjack and /blackjack/hit.
   dealer = session['dealer']
   dealer.hit
   next_route = dealer.bust? ? '/blackjack/stay' : back
