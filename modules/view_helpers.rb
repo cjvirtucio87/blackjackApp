@@ -12,14 +12,13 @@ module ViewHelpers
 
   def display_outcome(outcome,bet)
     if outcome
-      "Player wins. $#{bet.to_i*2}"
+      "Player wins. #{bet.to_i*2}"
     else
       "Player loses."
     end
   end
 
   def show_dealer_hand(hand,gameover)
-    tag :h1, "Dealer's Hand"
     if gameover
       tag :p, "#{hand}"
     else

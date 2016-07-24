@@ -1,27 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= main_header(outcome,bet) %>
+      <h3>Dealer's Hand</h3>
+      <%= show_dealer_hand(dealer_hand,gameover) %>
 
-<div class="container site-wrapper">
-  <div class="site-wrapper-inner">
-    <div class="row">
-      <div class="col-xs-12">
-        <%= main_header(outcome,bet) %>
-
-        <%= show_dealer_hand(dealer_hand,gameover) %>
-
-        <h3>Player's hands</h3>
-        <%= player_hand %>
-
-      </div class="col-xs-12">
+      <h3>Player's hands</h3>
+      <%= player_hand %>
     </div>
-    <div class="row">
-      <div class="col-xs-2 col-xs-offset-5">
-        <form action="blackjack/hit" method="post">
-          <%= input('input', 'bet', class: 'form-control') unless bet %>
-          <%= button('Hit', type: 'submit', class: 'btn-secondary') unless gameover %>
-        </form>
-
-        <form action="blackjack/stay" method="get">
-          <%= button('Stay', type: 'submit', class: 'btn-secondary') unless gameover %>
-        </form>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <form action="blackjack/hit" method="post">
+        <%= input('input', 'bet', class: 'form-control') unless bet %>
+        <%= button('Hit', type: 'submit', class: 'btn-lg btn-success') unless gameover %>
+      </form>
+      <form action="blackjack/stay" method="get">
+        <%= button('Stay', type: 'submit', class: 'btn-lg') unless gameover %>
+      </form>
     </div>
+  </div>
 </div>
